@@ -57,5 +57,4 @@ public class UsaLlistaDadesUrb {
 		f.close();
 		return result;
 	}
-
 }
