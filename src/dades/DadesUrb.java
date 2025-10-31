@@ -28,6 +28,26 @@ public class DadesUrb {
 	private static String[] comGirona = { "Alt Empordà", "Baix Empordà", "Cerdanya", "Garrotxa", "Gironès",
 			"Pla de l'Estany", "Selva", "Ripollès" };
 
+	/**
+	 * Contructor de DadesUrb que inicializa el objeto con todos los datos urbanísticos por 
+	 * municipio y año proporcionado.
+	 * 
+	 * @param anyDades (int) Año de los datos.
+	 * @param nomMunicipi (String)	Nombre del municipio.
+	 * @param comarca (String) Nombre de la comarca.
+	 * @param esMunicipiDeCosta (boolean) Indica si es municipio de costa: si (1), no(0).
+	 * @param esMunicipiDeMuntanya (boolean) Indica si es municipio de montaña: si (1), no(0).
+	 * @param numHabitants (int) Número de habitantes del municipio.
+	 * @param superficie_ha (double) Superficie del municipio (hectáreas).
+	 * @param superfSolUrba_ha (double) Superficie del suelo urbano (hectáreas).
+	 * @param superfSolUrbanitzable_ha (double) Superficie de suelo urbanizable (hectáreas).
+	 * @param superfSolNOurbanitzable_ha (double) Superficie de suelo NO urbanizable (hectáreas).
+	 * @param superfIndustrial_ha (double) Superficie de suelo Act.Económica(A1) Industrial (hectáreas).
+	 * @param superfServeis_ha (double) Supericie de suelo Act.Económica(A2) Servicios (hectáreas).
+	 * @param superfLogistica_ha (double) Superficie de suelo Act.Económica(A3) Logística (hectáreas).
+	 * @param superfZonesVerdes_ha (double) Superficie de suelo destinado a zonas verdes (hectáreas).
+	 * @param superfEquipHabitant_m2 (double) Superficie de suelo de equipamiento por habitante (metros cuadrados).
+	 *  */ 
 	public DadesUrb(int anyDades, String nomMunicipi, String comarca, boolean esMunicipiDeCosta,
 			boolean esMunicipiDeMuntanya, int numHabitants, double superficie_ha, double superfSolUrba_ha,
 			double superfSolUrbanitzable_ha, double superfSolNOurbanitzable_ha, double superfIndustrial_ha,
