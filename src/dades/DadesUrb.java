@@ -71,6 +71,14 @@ public class DadesUrb {
 		this.superfEquipHabitant_m2 = superfEquipHabitant_m2;
 	}
 
+	/**
+	 * Método que devuelve el nombre de la provincia a la que pertenece 
+	 * la comarca pasada por parámetro. Si la comarca no se encuentra, 
+	 * se imprime mensaje de error.
+	 * 
+	 * @param comarca Nombre de la comarca que se desea identificar.
+	 * @return Nombre de la provincia correspondiente y si no se encuentra, string de error.
+	 */
 	private String cercaProvinciaComarca(String comarca) {
 		String nomProvincia = null;
 		if (estaEn(comarca, comBarcelona))
@@ -86,6 +94,14 @@ public class DadesUrb {
 		return nomProvincia;
 	}
 
+	/**
+	 * Método que busca una comarca introducida por parámetro en una lista 
+	 * de comarcas de la provincia deseada.
+	 * 
+	 * @param comarca	Nombre de la comarca a buscar.
+	 * @param comarquesProvincia	Lista de comarcas de la provincia.
+	 * @return (True) Si la comarca se encuentra en la lista, (False) en caso contrario.
+	 */
 	private boolean estaEn(String comarca, String[] comarquesProvincia) {
 		int pos = 0;
 		boolean trobat = false;
@@ -99,6 +115,11 @@ public class DadesUrb {
 		return trobat;
 	}
 
+	/**
+	 * Método que devuelve una string de todos los datos urbanísticos contenidos en la instancia DadesUrb.
+	 * 
+	 * @return Cadena de texto que representa todos los campos de la instancia actual.
+	 */
 	@Override
 	public String toString() {
 		String aux="\n\nDadesUrb";
@@ -113,6 +134,11 @@ public class DadesUrb {
 		return aux;
 	}
 
+	/**
+	 * Método que crea y devuelve una nueva instancia igual a la actual.
+	 * 
+	 * @return Nueva instancia con los mismos datos que el objeto actual.
+	 */
 	public DadesUrb copia() {
 		DadesUrb duplicat = new DadesUrb(anyDades, nomMunicipi, comarca, esMunicipiDeCosta,
 				esMunicipiDeMuntanya, numHabitants, superficie_ha, superfSolUrba_ha,
