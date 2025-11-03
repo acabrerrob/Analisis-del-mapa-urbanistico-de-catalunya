@@ -159,6 +159,38 @@ public class LlistaDadesUrb {
 
 
 
+    /**
+     * Método para guardar los datos de un unico municipio, pasado por parametro,
+     * en una nueva lista de datos creada
+     * 
+     * @param municipi nombre del municipio de los datos a guardar
+     * @return nueva lista de datos con los datos del municipio pasado por parametro,
+     * si no hay ningun dato del municipio, devuelve null
+     */
+    public LlistaDadesUrb dadesUnMunicipi(String municipi){
+        int aux = 0;        //auxiliar para crear la tabla
+        for (int i = 0; i < this.nDades; i++){      //bucle para saber el tamaño de la nueva lista
+            if (this.listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(municipi)){
+                aux++;
+            }
+        }
+
+        if ((aux == 0) || (this.nDades == 0)){      //en caso de que no haya ningun dato del municipio, devuelve null
+            return null;
+        }
+
+        LlistaDadesUrb dadesMunicipi = new LlistaDadesUrb(aux);
+        for (int i = 0; i < aux; i++){
+            if (this.listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(municipi)){
+                dadesMunicipi.afegirDadesUrb(this.listaDadesUrb[i]);
+            }
+        }
+        return dadesMunicipi;
+    }
+
+
+
+
 
     //Metodos private
 
