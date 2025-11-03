@@ -83,20 +83,27 @@ public class LlistaDadesUrb {
         }
     }
 
+    /**
+     * Método que consulta los datos del municipio que tiene la superficie 
+     * total mas grnde de Catalunya.
+     * 
+     * @return Intancia de datos identificada (si coinciden en valor, 
+     * la primera de ellas) o null si no hay ningún elemento.
+    */
     public DadesUrb municipiSuperfMesGran() {
-        int mesGran = 0;
-
         //Comprobación de que la lista no esta vacia.
         if(nDades == 0){
             return null;    
-        }else{
-            for(int i = 1 ; i < nDades ; i++) {
-                if(listaDadesUrb[mesGran].getSuperficie_ha() < listaDadesUrb[i].getSuperficie_ha()) {
-                    mesGran = i;
-                }
+        }
+
+        int mesGran = 0;
+
+        for (int i = 0 ; i < nDades ; i++){
+            if ( listaDadesUrb[mesGran].getSuperficie_ha() < listaDadesUrb[i].getSuperficie_ha()) {
+                mesGran = i;
             }
         }
-        
+        return listaDadesUrb[mesGran].copia();       
     }
 
 
