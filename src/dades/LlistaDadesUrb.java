@@ -84,7 +84,7 @@ public class LlistaDadesUrb {
     }
 
     /**
-     * Método que consulta los datos del municipio que tiene la superficie 
+     * Método que consulta los datos del municipio que tiene la superficie                                          MÉTODO 2
      * total mas grnde de Catalunya.
      * 
      * @return Intancia de datos identificada (si coinciden en valor, 
@@ -107,6 +107,16 @@ public class LlistaDadesUrb {
     }
 
 
+
+    /**
+     * Método que consulta si un municipio ha modificado
+     * su superficie de suelo urbanizable a lo largo de los años y devolviendo la variación.
+     * 
+     * 
+    */
+    public double municipiModSolUrbanitzable(String nomMunicipi){
+        
+    }
 
     
 }

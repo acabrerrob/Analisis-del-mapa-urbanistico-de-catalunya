@@ -156,11 +156,23 @@ public class DadesUrb {
 		return superficie_ha;
 	}
 	
-		/**
+	/**
 	 * Método getter que devuelve el año de los datos
-	 * @return Año de los datos actuales..
+	 * 
+	 * @return Año de los datos actuales.
 	 */
-	public int anyDades(){
+	public int getAnyDades(){
 		return anyDades;
 	}
+
+	/**
+	 * Método getter que devuelve la superficie urbanizable.
+	 * 
+	 * @return Superficie urbanizable en hectáreas.
+	*/
+	public double getSuperfSolUrbanitzable_ha(){
+		return superfSolUrba_ha;
+	}
+
+
 }
