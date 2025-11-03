@@ -148,5 +148,12 @@ public class DadesUrb {
 		return duplicat;
 	}
 
+	/**
+	 * Método getter que devuelve la superficie total del municipio en hectáreas.
+	 * @return Valor de la superficie total del municipo.
+	 */
+	public double getSuperficie_ha(){
+		return superficie_ha;
+	}
 	
 }

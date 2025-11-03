@@ -13,7 +13,7 @@ public class LlistaDadesUrb {
      */
     public LlistaDadesUrb(int dimension){
         listaDadesUrb = new DadesUrb[dimension];
-        nDades = 0;
+        this.nDades = 0;
     }
 
     /**
@@ -81,6 +81,22 @@ public class LlistaDadesUrb {
             listaDadesUrb[nDades] = datos.copia();
             nDades++;
         }
+    }
+
+    public DadesUrb municipiSuperfMesGran() {
+        int mesGran = 0;
+
+        //Comprobación de que la lista no esta vacia.
+        if(nDades == 0){
+            return null;    
+        }else{
+            for(int i = 1 ; i < nDades ; i++) {
+                if(listaDadesUrb[mesGran].getSuperficie_ha() < listaDadesUrb[i].getSuperficie_ha()) {
+                    mesGran = i;
+                }
+            }
+        }
+        
     }
 
 
