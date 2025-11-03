@@ -106,7 +106,28 @@ public class LlistaDadesUrb {
         return listaDadesUrb[mesGran].copia();       
     }
 
+    /**
+     * Método que comprueba cual es el porcentaje de Zonas Verdes de cada municipio (instancia)
+     * y devuelve el mas grande de la lista. Si la lista esta vacía, devuelve null
+     * 
+     * @return instancia de datos encontrada (si hay dos iguales, devuelve la primera)
+     * y si la lista esta vacía null.
+     */
+    public DadesUrb percZonesVerdesMesGran(){
+        //comprobar que no sea una instancia vacía
+        if(nDades == 0){
+            return null;    
+        }
 
+        int mesGran = 0;
+        
+        for (int i = 0; i < nDades; i++){
+            if (percZonesVerdes(listaDadesUrb[mesGran]) < percZonesVerdes(listaDadesUrb[i])){
+                mesGran = i;
+            }
+        }
+        return listaDadesUrb[mesGran].copia();
+    }
 
     /**
      * Método que consulta si un municipio ha modificado
@@ -116,6 +137,19 @@ public class LlistaDadesUrb {
     */
     public double municipiModSolUrbanitzable(String nomMunicipi){
         
+    }
+
+
+
+
+
+
+
+    //Metodos private
+
+
+    private double percZonesVerdes(DadesUrb dades){
+        return ((dades.getSuperfZonesVerdes_ha()/dades.getSuperficie_ha())*100);
     }
 
     

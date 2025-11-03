@@ -174,5 +174,13 @@ public class DadesUrb {
 		return superfSolUrba_ha;
 	}
 
+	/**
+	 * Método getter que devuelve la superficie del munnicipio destinado a zonas verdes
+	 * @return
+	 */
+	public double getSuperfZonesVerdes_ha(){
+		return superfZonesVerdes_ha;
+	}
+
 
 }
