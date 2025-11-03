@@ -183,4 +183,9 @@ public class DadesUrb {
 	}
 
 
+	public boolean getEsMunicipiDeCosta(){
+		return esMunicipiDeCosta;
+	}
+
+
 }

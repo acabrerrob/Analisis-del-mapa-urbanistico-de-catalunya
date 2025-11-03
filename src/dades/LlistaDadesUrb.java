@@ -139,7 +139,22 @@ public class LlistaDadesUrb {
         
     }
 
+    /**
+     * Método que comprueba si hay algun municipio de costa que no tenga suelo urbanizable,
+     * 
+     * @return primer municipio encontrado o null si no hay ninguno
+     */
+    public DadesUrb municipiCostaNoSolUrbanitzable(){
 
+        for (int i = 0; i < nDades; i++){
+            if (listaDadesUrb[i].getEsMunicipiDeCosta()){
+                if (listaDadesUrb[i].getSuperfSolUrbanitzable_ha() == 0){
+                    return listaDadesUrb[i];
+                }
+            }
+        }
+        return null;
+    }
 
 
 
@@ -147,7 +162,13 @@ public class LlistaDadesUrb {
 
     //Metodos private
 
-
+    /**
+     * Método que calcula el porcentaje de superficie de una instancia dedicado a
+     * las zonas verdes
+     * 
+     * @param dades instancia de la cual se calcula el porcentaje
+     * @return porcentaje de zonas verdes en funcion de su superficie
+     */
     private double percZonesVerdes(DadesUrb dades){
         return ((dades.getSuperfZonesVerdes_ha()/dades.getSuperficie_ha())*100);
     }
