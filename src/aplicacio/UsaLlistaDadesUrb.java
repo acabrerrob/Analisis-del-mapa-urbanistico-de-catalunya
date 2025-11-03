@@ -23,12 +23,27 @@ public class UsaLlistaDadesUrb {
 		// mostrem el contingut que hem llegit. Això ho eliminarem en les
 		// versions finals del codi
 		for (int i = 0; i < dataset.length; i++) {
-			System.out.println("Linia " + (i + 1) + " conté " + dataset[i]);
+
+
+			String[] split = dataset[i].split(";");
+
+
+			DadesUrb linea = new DadesUrb( Integer.parseInt(split[0]) , 						//Any dades paso a int
+											split[1] , 											// Nommunicipi
+											split[2] , 											// Comarca.
+											"0".equals(split[3]) ,								//Es municipi de costa paso a bolleano
+											"Zona de muntanya".equals(split[4]) ,				//Es municipi de muntanya paso a bolleano
+											Integer.parseInt(split[5]) ,						//Número de habitantes.
+											Double.parseDouble(split[6].replace(',', '.')) ,	//supHectarea
+											Double.parseDouble(split[7].replace(',', '.')) ,	//Suelo urbano
+											Double.parseDouble(split[8].replace(',', '.')) ,  	//Cambio de string a double superficie suelo urbanizable hectareas.
+											Double.parseDouble(split[9].replace(',', '.')) ,  	//Cambio de string a double superficie suelo NO urbanizable hectareas.
+											Double.parseDouble(split[10].replace(',', '.')) ,  	//Cambio de string a double supperficie suelo insutrial.
+											Double.parseDouble(split[11].replace(',', '.')) ,	//Cambio de string a double superficie de servicios.
+											Double.parseDouble(split[12].replace(',', '.')) , 	//Cambio de string a double superficie logistica.
+											Double.parseDouble(split[13].replace(',', '.')) , 	//Cambio de string a double superifcie zonas verdes.
+											Double.parseDouble(split[14].replace(',', '.'))); 	//Cambio de string a double superficie equipo habitante.
 		}
-
-		// Completar el codi a partir d'aquí
-
-		
 
 	}
 
