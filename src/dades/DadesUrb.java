@@ -156,4 +156,11 @@ public class DadesUrb {
 		return superficie_ha;
 	}
 	
+		/**
+	 * Método getter que devuelve el año de los datos
+	 * @return Año de los datos actuales..
+	 */
+	public int anyDades(){
+		return anyDades;
+	}
 }
