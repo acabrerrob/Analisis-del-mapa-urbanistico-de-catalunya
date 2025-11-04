@@ -31,7 +31,7 @@ public class UsaLlistaDadesUrb {
 			DadesUrb linea = new DadesUrb( Integer.parseInt(split[0]) , 						//Any dades paso a int
 											split[1] , 											// Nommunicipi
 											split[2] , 											// Comarca.
-											"0".equals(split[3]) ,								//Es municipi de costa paso a bolleano
+											"1".equals(split[3]) ,								//Es municipi de costa paso a bolleano
 											"Zona de muntanya".equals(split[4]) ,				//Es municipi de muntanya paso a bolleano
 											Integer.parseInt(split[5]) ,						//Número de habitantes.
 											Double.parseDouble(split[6].replace(',', '.')) ,	//supHectarea
