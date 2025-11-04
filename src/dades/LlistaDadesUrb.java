@@ -159,6 +159,8 @@ public class LlistaDadesUrb {
 
 
 
+
+
     /**
      * Método para guardar los datos de un unico municipio, pasado por parametro,
      * en una nueva lista de datos creada
@@ -191,6 +193,28 @@ public class LlistaDadesUrb {
 
 
 
+
+    /**
+     * Método que elimina todo el conjunto de datos de un municipio sin dejar posiciones
+     * vacías en la lista
+     * 
+     * @param municipi nombre del municipio del que se quieren borrar los datos
+     */
+    public void eliminaMunicipi(String municipi){
+        int i = 0;
+        while (i < nDades){
+            if (listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(municipi)){
+                for (int j = i; j < (nDades-1); j++){
+                    listaDadesUrb[j] = listaDadesUrb[j+1];
+                }
+                nDades--;
+                listaDadesUrb[nDades-1] = null;
+            }
+            else {
+                i++;
+            }
+        }
+    }
 
     //Metodos private
 
