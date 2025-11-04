@@ -176,16 +176,30 @@ public class DadesUrb {
 
 	/**
 	 * Método getter que devuelve la superficie del munnicipio destinado a zonas verdes
-	 * @return
+	 * 
+	 * @return superficie de zonas verdes en hectareas
 	 */
 	public double getSuperfZonesVerdes_ha(){
 		return superfZonesVerdes_ha;
 	}
 
-
+	/**
+	 * Método getter que devuelve si es un municipio de costa o no (0 no lo es, 1 si)
+	 * 
+	 * @return cierto si es municipio de costa, falso en caso contrario
+	 */
 	public boolean getEsMunicipiDeCosta(){
 		return esMunicipiDeCosta;
 	}
 
-	
+	/**
+	 * Método getter que devuelve el nombre del municipio
+	 * 
+	 * @return String con el nombre del municipio
+	 */
+	public String getNomMunicipi(){
+		return nomMunicipi;
+	}
+
+
 }
