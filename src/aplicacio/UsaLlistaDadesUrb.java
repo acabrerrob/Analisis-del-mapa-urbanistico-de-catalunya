@@ -22,11 +22,10 @@ public class UsaLlistaDadesUrb {
 
 		// mostrem el contingut que hem llegit. Això ho eliminarem en les
 		// versions finals del codi
+		LlistaDadesUrb lista =  new LlistaDadesUrb(numLinies);
 		for (int i = 0; i < dataset.length; i++) {
 
-
 			String[] split = dataset[i].split(";");
-
 
 			DadesUrb linea = new DadesUrb( Integer.parseInt(split[0]) , 						//Any dades paso a int
 											split[1] , 											// Nommunicipi
@@ -43,7 +42,10 @@ public class UsaLlistaDadesUrb {
 											Double.parseDouble(split[12].replace(',', '.')) , 	//Cambio de string a double superficie logistica.
 											Double.parseDouble(split[13].replace(',', '.')) , 	//Cambio de string a double superifcie zonas verdes.
 											Double.parseDouble(split[14].replace(',', '.'))); 	//Cambio de string a double superficie equipo habitante.
+			lista.afegirDadesUrb(linea);	
 		}
+		
+
 
 	}
 
