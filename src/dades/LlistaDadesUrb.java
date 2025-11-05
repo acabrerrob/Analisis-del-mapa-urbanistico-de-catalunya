@@ -84,7 +84,7 @@ public class LlistaDadesUrb {
     }
 
     /**
-     * Método que consulta los datos del municipio que tiene la superficie                                          MÉTODO 2
+     * Método que consulta los datos del municipio que tiene la superficie                                         
      * total mas grande de Catalunya.
      * 
      * @return Intancia de datos identificada (si coinciden en valor, 
@@ -130,7 +130,7 @@ public class LlistaDadesUrb {
     }
 
     /**
-     * Método que consulta si un municipio ha modificado su superficie de suelo                                 MÉTODO 4
+     * Método que consulta si un municipio ha modificado su superficie de suelo                            
      * urbanizable a lo largo de los años y devolviendo la variación.
      * 
      * @param nomMunicipi nombre del municipio.
@@ -175,7 +175,7 @@ public class LlistaDadesUrb {
     }
 
     /**
-     * Método que retorna un array con los municipio que                            MÉTODO 6
+     * Método que retorna un array con los municipio que                            
      * superan el umbral de densidad de población por km 
      * cuadrado indicado por parámetro.
      * 
