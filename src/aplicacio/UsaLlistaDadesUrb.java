@@ -172,4 +172,18 @@ public class UsaLlistaDadesUrb {
 		System.out.println("Les dades del municipi amb la superfície total més gran de Catalunya són:\n" + municipiMaxSup);
 	}
 	
+
+	public static void opcio7(LlistaDadesUrb lista){
+		//Solicitamos el valor al usuario
+		System.out.println("\n\n\tIndique el valor valor mínimo de densidad de población (habitantes/km²):\t ");
+		double vMinDensidad = Double.parseDouble(teclat.nextLine());
+
+		//
+		String[] municipios = lista.municipiMesDensos(vMinDensidad);
+
+		//Condiciono
+		if(municipios.length == 0){
+			System.out.println()
+		}
+	}
 }
