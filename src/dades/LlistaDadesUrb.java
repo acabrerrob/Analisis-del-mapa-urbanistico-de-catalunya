@@ -137,7 +137,25 @@ public class LlistaDadesUrb {
      * @return variación del suelo urbanizable del municipio entre los años.
     */
     public double municipiModSolUrbanitzable(String nomMunicipi){
-        
+        double superfIni = 0;
+        double superfFin = 0;
+        boolean encontrado = false;
+
+        //Recorro la lista de esta clase
+        for (int i = 0; i < listaDadesUrb.length ; i++){        
+
+            //Entra si el nombre de la lista es del municipio que buscamos.
+            if (listaDadesUrb[i].getNomMunicipi().equals(nomMunicipi)){    
+                //La primera vez que encuentre el municipio será el primer año.
+                if(!encontrado){                                            
+                    superfIni = listaDadesUrb[i].getSuperfSolUrbanitzable_ha();
+                    encontrado = true;
+                }
+                //Se actualizara hasta la última vez que encuentre el municipio y este será  el último.
+                superfFin = listaDadesUrb[i].getSuperfSolUrbanitzable_ha();
+            }
+        }
+        return superfFin - superfIni;
     }
 
     /**

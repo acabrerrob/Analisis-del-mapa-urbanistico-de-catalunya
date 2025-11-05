@@ -45,10 +45,13 @@ public class UsaLlistaDadesUrb {
 											Double.parseDouble(split[14].replace(',', '.'))); 	//Cambio de string a double superficie equipo habitante.
 			lista.afegirDadesUrb(linea);	
 		}
+		
+
 		/**COMPROBACIÓN DE QUE SE LEE BIEN DEL CSV PARA PASAR A CLASE:
 		 * System.out.println("Listado de datos => nDades " + lista.getNDades());
 		 * System.out.println(lista);*/
 	}
+	
 
 	private static String[] llegirLiniesFitxer(int liniaIni, int liniaFi) throws FileNotFoundException {
 		String[] result;
@@ -74,5 +77,10 @@ public class UsaLlistaDadesUrb {
 		}
 		f.close();
 		return result;
+		
+		
+
 	}
+
+	
 }
