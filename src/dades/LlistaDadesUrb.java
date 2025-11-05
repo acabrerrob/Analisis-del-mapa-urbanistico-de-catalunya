@@ -255,7 +255,14 @@ public class LlistaDadesUrb {
         return dadesMunicipi;
     }
 
+    /**
+     * Método
+     * @param municipi
+     */
+    public LlistaDadesUrb filtroPorTipo(boolean costa, boolean montanya){
 
+        
+    }
 
 
 

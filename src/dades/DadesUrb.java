@@ -183,6 +183,7 @@ public class DadesUrb {
 	 */
 	public int getNumHabitants(){
 		return numHabitants;
+		
 	}
 
 	/**
