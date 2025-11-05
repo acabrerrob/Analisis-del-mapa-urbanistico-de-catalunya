@@ -226,9 +226,6 @@ public class LlistaDadesUrb {
         return listaMesDensos;
     }
 
-
-
-
     /**
      * Método para guardar los datos de un unico municipio, pasado por parametro,
      * en una nueva lista de datos creada
