@@ -50,7 +50,7 @@ public class LlistaDadesUrb {
         duplicado.nDades = this.nDades;
         
         for (int i = 0; i < this.nDades; i++){
-            duplicado.listaDadesUrb[i] = this.listaDadesUrb[i];
+            duplicado.listaDadesUrb[i] = this.listaDadesUrb[i].copia();
         }
         return duplicado;
     }
@@ -65,7 +65,7 @@ public class LlistaDadesUrb {
         String aux = "Listado de datos => nDades " + nDades;
 
         for (int i = 0; i < nDades; i++){
-            aux = aux + "\n\tDadesUrb " + (i+1) + ":\t" + listaDadesUrb[i];
+            aux = aux + "\n\t" + listaDadesUrb[i];
         }
         return aux;
     }
@@ -85,7 +85,7 @@ public class LlistaDadesUrb {
 
     /**
      * Método que consulta los datos del municipio que tiene la superficie                                          MÉTODO 2
-     * total mas grnde de Catalunya.
+     * total mas grande de Catalunya.
      * 
      * @return Intancia de datos identificada (si coinciden en valor, 
      * la primera de ellas) o null si no hay ningún elemento.
@@ -145,7 +145,7 @@ public class LlistaDadesUrb {
         for (int i = 0; i < listaDadesUrb.length ; i++){        
 
             //Entra si el nombre de la lista es del municipio que buscamos.
-            if (listaDadesUrb[i].getNomMunicipi().equals(nomMunicipi)){    
+            if (listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(nomMunicipi)){    
                 //La primera vez que encuentre el municipio será el primer año.
                 if(!encontrado){                                            
                     superfIni = listaDadesUrb[i].getSuperfSolUrbanitzable_ha();
@@ -166,10 +166,9 @@ public class LlistaDadesUrb {
     public DadesUrb municipiCostaNoSolUrbanitzable(){
 
         for (int i = 0; i < nDades; i++){
-            if (listaDadesUrb[i].getEsMunicipiDeCosta()){
-                if (listaDadesUrb[i].getSuperfSolUrbanitzable_ha() == 0){
-                    return listaDadesUrb[i];
-                }
+            if ((listaDadesUrb[i].getEsMunicipiDeCosta()) && 
+                (listaDadesUrb[i].getSuperfSolUrbanitzable_ha() == 0)){
+                return listaDadesUrb[i];
             }
         }
         return null;
@@ -247,7 +246,7 @@ public class LlistaDadesUrb {
         }
 
         LlistaDadesUrb dadesMunicipi = new LlistaDadesUrb(aux);
-        for (int i = 0; i < aux; i++){
+        for (int i = 0; i < this.nDades; i++){
             if (this.listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(municipi)){
                 dadesMunicipi.afegirDadesUrb(this.listaDadesUrb[i]);
             }
@@ -273,7 +272,7 @@ public class LlistaDadesUrb {
                     listaDadesUrb[j] = listaDadesUrb[j+1];
                 }
                 nDades--;
-                listaDadesUrb[nDades-1] = null;
+                listaDadesUrb[nDades] = null;
             }
             else {
                 i++;
