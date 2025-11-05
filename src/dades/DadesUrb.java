@@ -199,7 +199,7 @@ public class DadesUrb {
 	 * @return Superficie urbanizable en hectáreas.
 	*/
 	public double getSuperfSolUrbanitzable_ha(){
-		return superfSolUrba_ha;
+		return superfSolUrbanitzable_ha;
 	}
 
 	/**
