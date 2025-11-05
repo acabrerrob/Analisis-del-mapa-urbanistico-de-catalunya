@@ -130,10 +130,11 @@ public class LlistaDadesUrb {
     }
 
     /**
-     * Método que consulta si un municipio ha modificado
-     * su superficie de suelo urbanizable a lo largo de los años y devolviendo la variación.
+     * Método que consulta si un municipio ha modificado su superficie de suelo                                 MÉTODO 4
+     * urbanizable a lo largo de los años y devolviendo la variación.
      * 
-     * 
+     * @param nomMunicipi nombre del municipio.
+     * @return variación del suelo urbanizable del municipio entre los años.
     */
     public double municipiModSolUrbanitzable(String nomMunicipi){
         

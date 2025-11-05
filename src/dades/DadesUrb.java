@@ -148,13 +148,6 @@ public class DadesUrb {
 		return duplicat;
 	}
 
-	/**
-	 * Método getter que devuelve la superficie total del municipio en hectáreas.
-	 * @return Valor de la superficie total del municipo.
-	 */
-	public double getSuperficie_ha(){
-		return superficie_ha;
-	}
 	
 	/**
 	 * Método getter que devuelve el año de los datos
@@ -163,6 +156,32 @@ public class DadesUrb {
 	 */
 	public int getAnyDades(){
 		return anyDades;
+	}
+
+	/**
+	 * Método getter que devuelve el nombre del municipio
+	 * 
+	 * @return String con el nombre del municipio
+	 */
+	public String getNomMunicipi(){
+		return nomMunicipi;
+	}
+
+	/**
+	 * Método getter que devuelve si es un municipio de costa o no (0 no lo es, 1 si)
+	 * 
+	 * @return cierto si es municipio de costa, falso en caso contrario
+	 */
+	public boolean getEsMunicipiDeCosta(){
+		return esMunicipiDeCosta;
+	}
+
+	/**
+	 * Método getter que devuelve la superficie total del municipio en hectáreas.
+	 * @return Valor de la superficie total del municipo.
+	 */
+	public double getSuperficie_ha(){
+		return superficie_ha;
 	}
 
 	/**
@@ -183,23 +202,9 @@ public class DadesUrb {
 		return superfZonesVerdes_ha;
 	}
 
-	/**
-	 * Método getter que devuelve si es un municipio de costa o no (0 no lo es, 1 si)
-	 * 
-	 * @return cierto si es municipio de costa, falso en caso contrario
-	 */
-	public boolean getEsMunicipiDeCosta(){
-		return esMunicipiDeCosta;
-	}
 
-	/**
-	 * Método getter que devuelve el nombre del municipio
-	 * 
-	 * @return String con el nombre del municipio
-	 */
-	public String getNomMunicipi(){
-		return nomMunicipi;
-	}
+
+
 
 
 }
