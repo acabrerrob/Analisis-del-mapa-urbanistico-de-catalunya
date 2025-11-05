@@ -177,6 +177,15 @@ public class DadesUrb {
 	}
 
 	/**
+	 * Método getter que devuelve el número de habitantes.
+	 * 
+	 * @return número de habitantes.
+	 */
+	public int getNumHabitants(){
+		return numHabitants;
+	}
+
+	/**
 	 * Método getter que devuelve la superficie total del municipio en hectáreas.
 	 * @return Valor de la superficie total del municipo.
 	 */
