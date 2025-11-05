@@ -175,7 +175,54 @@ public class LlistaDadesUrb {
         return null;
     }
 
+    /**
+     * Método que retorna un array con los municipio que                            MÉTODO 6
+     * superan el umbral de densidad de población por km 
+     * cuadrado indicado por parámetro.
+     * 
+     * @param vMinDensitat
+     * @return
+     */
+    public String[] municipiMesDensos(double vMinDensitat){
+        //Variable para medida total del array del return.
+        int mida = 0;
+        //Creo una instancia de array string con la misma longitud que la del array de la clase
+        String[] listaTemporal = new String[nDades];
 
+        double densidadPob;
+        //Recorro la lista de la clase en busca de la cantidad de municipios que cumplen con las características para entrar en el array resultado.
+        for(int i = 0 ; i < listaDadesUrb.length ; i++){
+            
+            //Fórmula de dennsidad
+            densidadPob = listaDadesUrb[i].getNumHabitants() * 100 / listaDadesUrb[i].getSuperficie_ha();
+            
+            //Solo entra si cumple el requisito del valor mínimo de densidad
+            if((densidadPob > vMinDensitat){
+
+                //Variable para comprobar repeticiones
+                boolean repetido = false;
+                int j = 0;
+                //Comprobar que NO está en el array
+                while(!repetido && j < listaTemporal.length){
+
+                    //Condición para encontrar repetido
+                    if(listaTemporal[j].equals(listaDadesUrb[i].getNomMunicipi())){
+                        repetido = true;
+                    }else{
+                        mida += 1;
+                        j++;
+                    }
+                }
+                if(!repetido){
+                    listaTemporal[mida - 1] = listaDadesUrb[i].getNomMunicipi();
+                }
+            }
+        }
+
+        String[] listaMesDensos = new String [mida];
+        
+        return listaMesDensos;
+    }
 
 
 
