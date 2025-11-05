@@ -22,7 +22,8 @@ public class UsaLlistaDadesUrb {
 
 		// mostrem el contingut que hem llegit. Això ho eliminarem en les
 		// versions finals del codi
-		LlistaDadesUrb lista =  new LlistaDadesUrb(numLinies);
+		LlistaDadesUrb lista =  new LlistaDadesUrb(numLinies);	//Creo instancia de LlistaDadesUrb con el número de lineas.
+
 		for (int i = 0; i < dataset.length; i++) {
 
 			String[] split = dataset[i].split(";");
@@ -44,7 +45,8 @@ public class UsaLlistaDadesUrb {
 											Double.parseDouble(split[14].replace(',', '.'))); 	//Cambio de string a double superficie equipo habitante.
 			lista.afegirDadesUrb(linea);	
 		}
-		
+		System.out.println("Listado de datos => nDades " + lista.getNDades());
+		System.out.println(lista);
 
 
 	}
