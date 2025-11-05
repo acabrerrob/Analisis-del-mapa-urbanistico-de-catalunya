@@ -142,7 +142,7 @@ public class LlistaDadesUrb {
         boolean encontrado = false;
 
         //Recorro la lista de esta clase
-        for (int i = 0; i < listaDadesUrb.length ; i++){        
+        for (int i = 0; i < nDades ; i++){        
 
             //Entra si el nombre de la lista es del municipio que buscamos.
             if (listaDadesUrb[i].getNomMunicipi().equalsIgnoreCase(nomMunicipi)){    
@@ -190,7 +190,7 @@ public class LlistaDadesUrb {
 
         double densidadPob;
         
-        for(int i = 0 ; i < listaDadesUrb.length ; i++){
+        for(int i = 0 ; i < nDades ; i++){
             
             //Fórmula de dennsidad
             densidadPob = listaDadesUrb[i].getNumHabitants() * 100 / listaDadesUrb[i].getSuperficie_ha();
@@ -254,8 +254,15 @@ public class LlistaDadesUrb {
         return dadesMunicipi;
     }
 
-
-
+    /** * Método que crea una nueva instancia que contiene los municipios de montaña, 
+     * costa, ambos o ninguno. Según se solicite por parámetro. 
+     * @param costa boolean: true cuando es costa y false cuando no lo es. 
+     * @param muntanya boolean: true cuando es muntanya y false cuando no lo es. 
+     * @return Nueva instancia de Llista 
+     */
+    public LlistaDadesUrb listaPorTipo(booolean costa, boolean muntanya){
+        
+    }
 
 
     /**
