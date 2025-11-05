@@ -191,20 +191,14 @@ public class LlistaDadesUrb {
         double densidadPob;
         
         for(int i = 0 ; i < nDades ; i++){
-            
-            //Fórmula de dennsidad
             densidadPob = listaDadesUrb[i].getNumHabitants() * 100 / listaDadesUrb[i].getSuperficie_ha();
             
-            //Solo entra si cumple el requisito del valor mínimo de densidad
             if(densidadPob > vMinDensitat){
-
-                //Variable para comprobar repeticiones
                 boolean repetido = false;
                 int j = 0;
                 //Comprobar que NO está en el array
                 while(!repetido && j < mida){
 
-                    //Condición para encontrar repetido
                     if(listaTemporal[j].equalsIgnoreCase(listaDadesUrb[i].getNomMunicipi())){
                         repetido = true;
                     }
@@ -254,14 +248,23 @@ public class LlistaDadesUrb {
         return dadesMunicipi;
     }
 
-    /** * Método que crea una nueva instancia que contiene los municipios de montaña, 
+    /**
+     * Método que crea una nueva instancia que contiene los municipios de montaña, 
      * costa, ambos o ninguno. Según se solicite por parámetro. 
      * @param costa boolean: true cuando es costa y false cuando no lo es. 
      * @param muntanya boolean: true cuando es muntanya y false cuando no lo es. 
      * @return Nueva instancia de Llista 
      */
-    public LlistaDadesUrb listaPorTipo(booolean costa, boolean muntanya){
-        
+    public LlistaDadesUrb listaPorTipo(boolean costa, boolean muntanya){
+        LlistaDadesUrb listaDeTipo = new LlistaDadesUrb(nDades);
+
+        for(int i = 0 ; i < nDades ; i++ ){
+
+            if(listaDadesUrb[i].getEsMunicipiDeCosta() == costa && listaDadesUrb[i].getEsMunicipiDeMuntanya() == muntanya){
+                listaDeTipo.afegirDadesUrb(listaDadesUrb[i]);
+            }
+        }
+        return listaDeTipo;
     }
 
 

@@ -177,6 +177,15 @@ public class DadesUrb {
 	}
 
 	/**
+	 * Método getter que devuelve si es un municipio de montaña o no (0 no lo es, 1 si)
+	 * 
+	 * @return cierto si es municipio de montaña, falso en caso contrario
+	 */
+	public boolean getEsMunicipiDeMuntanya(){
+		return esMunicipiDeMuntanya;
+	}
+
+	/**
 	 * Método getter que devuelve el número de habitantes.
 	 * 
 	 * @return número de habitantes.
