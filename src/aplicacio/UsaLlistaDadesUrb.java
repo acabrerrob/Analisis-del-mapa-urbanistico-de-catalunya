@@ -175,7 +175,6 @@ public class UsaLlistaDadesUrb {
 
 	public static void opcio7(LlistaDadesUrb lista){
 		// 7. Mostrar el nombre de los municipios que tienen una densidad de poblaición superior al valor introducido por teclado
-
 		//Solicitamos el valor al usuario
 		System.out.println("\n\n\tIndique el valor mínimo de densidad de población (habitantes/km²):\t ");
 		double vMinDensidad = Double.parseDouble(teclat.nextLine());
@@ -189,6 +188,26 @@ public class UsaLlistaDadesUrb {
 		}else{
 			//Si se encuentra municipio
 			System.out.println("Municipios con densidad de publación superior a " + vMinDensidad + " habitants/km²:\n");
+			for(int i = 0 ; i < municipios.length ; i++){
+				System.out.println("\t- " + municipios[i]);
+			}
+		}
+	}
+
+	public static void opcio8(LlistaDadesUrb lista){
+		// 8. Mostrar el nombre del municipio de montaña que tiene una densidad de poblacion superior a un valor introducido por teclado
+		//Solicitamos el valor al usuario
+		System.out.println("\n\n\tIndique el valor mínimo de densidad de población (habitantes/km²):\t ");
+		double vMinDensidad = Double.parseDouble(teclat.nextLine());
+
+		String[] municipios = lista.listaPorTipo(false, true).municipiMesDensos(vMinDensidad);
+
+		//En caso de que no se encuentre ningún municipio
+		if(municipios.length == 0){
+			System.out.println("Lamentablemente no se han hallado municipios de muntanya con densidad de publación superior a " + vMinDensidad + " habitants/km²");
+		}else{
+			//Si se encuentra municipio
+			System.out.println("Municipios de muntanya con densidad de publación superior a " + vMinDensidad + " habitants/km²:\n");
 			for(int i = 0 ; i < municipios.length ; i++){
 				System.out.println("\t- " + municipios[i]);
 			}
