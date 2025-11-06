@@ -230,4 +230,20 @@ public class UsaLlistaDadesUrb {
 			}
 		}
 	}
+
+	public static void opcio10(LlistaDadesUrb lista){
+		// 10. Mostrar informacion del municipio que no es ni de costa ni de montanya que tiene la superficie total mas grande de Catalunya.
+		LlistaDadesUrb noCostaMuntanya = lista.listaPorTipo(false, false);
+		DadesUrb municipioSupTmesGran = noCostaMuntanya.municipiSuperfMesGran();
+
+		//En caso de que no se encuentre ningún municipio
+		if(municipioSupTmesGran == null){
+			System.out.println("Lamentablemente no se han hallado ningun municipio que no sea ni costa ni montaña");
+
+		}else{
+			//Si se encuentra municipio
+			System.out.println("El municipio sin costa ni montaña con la superifice total mas grande de Catalunya es:");
+			System.out.println(municipioSupTmesGran);
+		}
+	}
 }
