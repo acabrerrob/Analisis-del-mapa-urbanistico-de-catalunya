@@ -213,4 +213,21 @@ public class UsaLlistaDadesUrb {
 			}
 		}
 	}
+
+	public static void opcio9(LlistaDadesUrb lista){
+		// 9. Mostrar la informacion del municipio de costa que tiene el porcentaje de superficie densidad de zonas verdes mas alto de Catalunya.
+
+		LlistaDadesUrb municipiosCosta = lista.listaPorTipo(true, false);
+		DadesUrb municipioCostaZonaVerdeMesGran = municipiosCosta.percZonesVerdesMesGran();
+
+		//En caso de que no se encuentre ningún municipio
+		if(municipioCostaZonaVerdeMesGran == null){
+			System.out.println("Lamentablemente no se han hallado ningun municipio de costa con zonas verdes");
+		}else{
+			//Si se encuentra municipio
+			System.out.println("El municipio de costa con el mayor porcentaje de zonas verdes es:");
+			System.out.println(municipioCostaZonaVerdeMesGran);
+			}
+		}
+	}
 }
