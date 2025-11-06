@@ -48,7 +48,7 @@ public class UsaLlistaDadesUrb {
 
 		mostraMenu();
 		opcio = Integer.parseInt(teclat.nextLine());
-		while (opcio != 7) {
+		while (opcio != 12) {
 			switch (opcio) {
 			case 1:
 				opcio1(lista);
@@ -81,13 +81,13 @@ public class UsaLlistaDadesUrb {
 				opcio10(lista);
 				break;
 			case 11:
-				opcio11(lista);
+				//opcio11(lista);
 				break;
 			}
 
 			mostraMenu();
 			opcio = Integer.parseInt(teclat.nextLine());
-
+		}
 		
 	}
 	
@@ -126,7 +126,7 @@ public class UsaLlistaDadesUrb {
 		System.out.println("\t2. Esborrar les dades d'un municipi");
 		System.out.println("\t3. Mostrar les dades del municipi amb la superfície total més gran de Catalunya");
 		System.out.println("\t4. Mostrar la informació del municipi amb el percentatge de zones verdes més alt de Catalunya");
-		System.out.println("\t5. Mostrar la variació de la superfície de sòl urbanitzable");
+		System.out.println("\t5. Mostrar la variació de la superfície de sòl urbanitzable d'un municipi");
 		System.out.println("\t6. Mostrar les dades del primer municipi de costa sense sòl urbanitzable");
 		System.out.println("\t7. Mostrar el nom dels municipis que tenen una densitat de població superior a X");
 		System.out.println("\t8. Mostrar el nom Mostrar el nom dels municipis de muntanya que tenen una densitat de població superior a un"+
@@ -169,9 +169,34 @@ public class UsaLlistaDadesUrb {
 	public static void opcio3(LlistaDadesUrb lista) {
 		// 3. Mostrar les dades del municipi amb la superfície total més gran de Catalunya
 		DadesUrb municipiMaxSup = lista.municipiSuperfMesGran();
-		System.out.println("Les dades del municipi amb la superfície total més gran de Catalunya són:\n" + municipiMaxSup);
+		System.out.println("\nLes dades del municipi amb la superfície total més gran de Catalunya són:\n" + municipiMaxSup);
 	}
 	
+
+	public static void opcio4(LlistaDadesUrb lista) {
+		// 4. Mostrar la informació del municipi amb el percentatge de zones verdes més alt de Catalunya
+		DadesUrb municipiMaxZonesVerdes = lista.percZonesVerdesMesGran();
+		System.out.println("\nLes dades del municipi amb el percentatge de zones verdes més alt de Catalunya són:\n" + municipiMaxZonesVerdes);
+	}
+
+
+	public static void opcio5(LlistaDadesUrb lista) {
+		// 5. Mostrar la variació de la superfície de sòl urbanitzable d'un municipi
+		String municipi;
+		System.out.print("\n\n\tIndica municipi per veure la variació de la superfície de sòl urbanitzable:\t");
+		municipi = teclat.nextLine();
+
+		double variacio = lista.municipiModSolUrbanitzable(municipi);
+		System.out.println("\nLa variació de la superfície de sòl urbanitzable del municipi " + municipi + " és de: " + variacio + " hectàrees.");
+	}
+
+
+	public static void opcio6(LlistaDadesUrb lista) {
+		// 6. Mostrar les dades del primer municipi de costa sense sòl urbanitzable
+		DadesUrb municipi = lista.municipiCostaNoSolUrbanitzable();
+		System.out.println("\nLes dades del primer municipi de costa sense sòl urbanitzable són:\n" + municipi);
+	}
+
 
 	public static void opcio7(LlistaDadesUrb lista){
 		// 7. Mostrar el nombre de los municipios que tienen una densidad de poblaición superior al valor introducido por teclado
@@ -194,6 +219,7 @@ public class UsaLlistaDadesUrb {
 		}
 	}
 
+
 	public static void opcio8(LlistaDadesUrb lista){
 		// 8. Mostrar el nombre del municipio de montaña que tiene una densidad de poblacion superior a un valor introducido por teclado
 		//Solicitamos el valor al usuario
@@ -214,6 +240,7 @@ public class UsaLlistaDadesUrb {
 		}
 	}
 
+
 	public static void opcio9(LlistaDadesUrb lista){
 		// 9. Mostrar la informacion del municipio de costa que tiene el porcentaje de superficie densidad de zonas verdes mas alto de Catalunya.
 
@@ -227,9 +254,9 @@ public class UsaLlistaDadesUrb {
 			//Si se encuentra municipio
 			System.out.println("El municipio de costa con el mayor porcentaje de zonas verdes es:");
 			System.out.println(municipioCostaZonaVerdeMesGran);
-			}
 		}
 	}
+
 
 	public static void opcio10(LlistaDadesUrb lista){
 		// 10. Mostrar informacion del municipio que no es ni de costa ni de montanya que tiene la superficie total mas grande de Catalunya.
@@ -242,7 +269,7 @@ public class UsaLlistaDadesUrb {
 
 		}else{
 			//Si se encuentra municipio
-			System.out.println("El municipio sin costa ni montaña con la superifice total mas grande de Catalunya es:");
+			System.out.println("\nEl municipio sin costa ni montaña con la superifice total mas grande de Catalunya es:\n");
 			System.out.println(municipioSupTmesGran);
 		}
 	}

@@ -256,9 +256,9 @@ public class LlistaDadesUrb {
      * @return Nueva instancia de Llista 
      */
     public LlistaDadesUrb listaPorTipo(boolean costa, boolean muntanya){
-        LlistaDadesUrb listaDeTipo = new LlistaDadesUrb(nDades);
+        LlistaDadesUrb listaDeTipo = new LlistaDadesUrb(this.nDades);
 
-        for(int i = 0 ; i < nDades ; i++ ){
+        for(int i = 0 ; i < this.nDades ; i++ ){
 
             if(listaDadesUrb[i].getEsMunicipiDeCosta() == costa && listaDadesUrb[i].getEsMunicipiDeMuntanya() == muntanya){
                 listaDeTipo.afegirDadesUrb(listaDadesUrb[i]);
