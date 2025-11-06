@@ -81,7 +81,7 @@ public class UsaLlistaDadesUrb {
 				opcio10(lista);
 				break;
 			case 11:
-				//opcio11(lista);
+				opcio11(lista);
 				break;
 			}
 
@@ -271,6 +271,24 @@ public class UsaLlistaDadesUrb {
 			//Si se encuentra municipio
 			System.out.println("\nEl municipio sin costa ni montaña con la superifice total mas grande de Catalunya es:\n");
 			System.out.println(municipioSupTmesGran);
+		}
+	}
+
+	public static void opcio11(LlistaDadesUrb llista){
+		// 11. Mostrar la evolucion de la poblacion anual de un municipio en los diferentes años donde tenemos datos.
+		System.out.println("Introduzca el nombre del municipio para consultar la evolucion de la poblacion: ");
+		String municipio = teclat.nextLine();
+
+		LlistaDadesUrb datosMunicipio = llista.dadesUnMunicipi(municipio);
+
+		if(datosMunicipio == null || datosMunicipio.getNDades() == 0){
+			System.out.println("No se han encontrado datos para el municipio " + municipio + ".");
+			return;
+		}
+		System.out.println("Evolucion de la poblacion anual del minucipio " + municipio + ":\n");
+		for(int i = 0 ; i < datosMunicipio.getNDades() ; i++){
+			DadesUrb queHayEnPosicio = datosMunicipio.enesimaDadesUrb(i);
+			System.out.println("- Año " + queHayEnPosicio.getAnyDades() + ": " + queHayEnPosicio.getNumHabitants() + " habitantes.");
 		}
 	}
 }
